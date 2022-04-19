@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevos tipos de datos JS</title>
+</head>
+
+<body>
+  <h1>Nuevos tipos de datos JS</h1>
+  <h2>This</h2>
+  <p>This es una palabra reservada en JS, que sirve para hacer referencia del contexto donde se esta llamando</p>
+  <script>
+    console.log(this); //devolvera el objeto window ya que este seria el objeto global que es su constexto en este momento
+
+    console.log(this === window)
+
+    this.nombre = "Contexto Global"
+    console.log(this.nombre);
+
+    function imprimir() {
+      console.log(this.nombre)
+    };
+
+    imprimir();
+
+    const obj = {
+      nombre: "Contexto objeto",
+      imprimir: function () {
+        console.log(this.nombre)
+      }
+    }
+
+    obj.imprimir();
+
+    const obj2 = {
+      nombre: "Contexto objeto 2",
+      imprimir
+    }
+
+    obj2.imprimir();
+
+    const obj3 = {
+      nombre: "Contexto objeto",
+      imprimir: () => { //La Arrow function mantiene un enlace al objeto donde fue creado, en este caso el this va tener un contexto global
+        console.log(this.nombre)
+      }
+    }
+
+    obj3.imprimir();
+
+    function Persona(nombre) {
+      this.nombre = nombre;
+      //return console.log(this.nombre);
+      return () => console.log(this.nombre);
+    }
+
+    let david = new Persona("David");
+    david();
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <h1>Fundamentos javascript</h1>
+    <h2>Tipos de datos: Function</h2>
+    <a href="funciones.html">Tipo de dato : Function</a>
+
+    <script>
+       //funcion declarada
+       function funcionDeclarada() {
+           console.log("Uno");
+           console.log("Dos");
+           console.log("Tres");
+       }
+
+       //Invocacion de funciones: nombre de la funcion con los()
+       funcionDeclarada()
+
+       //Para tener una funcion que devuelva un valor se tendra que usar la palabra reservada return.En el momento que hay un return en la funcion se ignora el resto de codigo y retornara el valor indicado hasta ese momento
+
+       function funcionQueDevuelveValor() {
+           console.log("Uno");
+           //return 19;
+           console.log("Dos");
+           console.log("Tres");
+           return "La funcion a retornado una cadena de texto"
+        }
+        let valorFuncion = funcionQueDevuelveValor();
+        console.log(valorFuncion);
+
+        //funciones con parametros a los que se les pueden agregar o no, valores por defecto que en este caso serian Pitufino y 3 respectivamente.
+
+        function saludar(nombre ="Pitufino",edad = 3) {
+           console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años de edad.`)
+        }
+        saludar("Nubia",54);
+        saludar();
+
+        //funcion declarada vs funcion expresada
+
+        funcionDeclarada();
+        function funcionDeclarada() {
+            console.log("Esta es una funcion declarada que podra invocarse en cualquie parte del codigo, incluso antes que esta funcion sea declarada")
+        };
+        funcionDeclarada();
+
+        //este tipo de funcion es anonima
+
+        //funcionExpresada();
+        const funcionExpresada = function () {
+            console.log("Esta es una funcion expresada, es decir una funcion que se le ha asignado como valor a una variable. si invocamos esta funcion antes de su definicion js nos dara un error porque la funcion esta siendo llamada antes de crear")
+        };
+        funcionExpresada();
+    </script>
+</body>
+</html>

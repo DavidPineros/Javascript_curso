@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asincronismo en JS</title>
+</head>
+
+<body>
+  <h1>Asincronia en JavaScript</h1>
+  <h2>Callbacks</h2>
+  <p>Es una funcion que se ejecutara despues de que otra lo haga, es el mecanismo por exelencia que tiene JS para
+    invocar algunas de sus finciones.</p>
+  <script>
+    //esta funcion lo que va ha realizar es recibir un valor y devolver el valor elevado al cuadrado y para generar el callback cada cierto tiempo se pondra otro valor y dara el resultado
+    function cuadradoCallbakc(value, callback) {
+      setTimeout(() => {
+        callback(value, value * value);
+      }, 0 | Math.random() * 1000);
+    }
+
+    cuadradoCallbakc(0, (value, result) => {
+      console.log("Inicia Callback");
+      console.log(`Callback: ${value}, ${result}`);
+      cuadradoCallbakc(1, (value, result) => {
+        console.log(`Callback: ${value}, ${result}`);
+        cuadradoCallbakc(2, (value, result) => {
+          console.log(`Callback: ${value}, ${result}`);
+          cuadradoCallbakc(3, (value, result) => {
+            console.log(`Callback: ${value}, ${result}`);
+            cuadradoCallbakc(4, (value, result) => {
+              console.log(`Callback: ${value}, ${result}`);
+              cuadradoCallbakc(5, (value, result) => {
+                console.log(`Callback: ${value}, ${result}`);
+                cuadradoCallbakc(6, (value, result) => {
+                  console.log(`Callback: ${value}, ${result}`);
+                  console.log("Fin Callback");
+                  console.log("Callback Hell !!!!");
+                  console.log("http://callbackhell.com/")
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

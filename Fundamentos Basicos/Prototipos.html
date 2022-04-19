@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <body>
+        <h1>Fundamentos javascript</h1>
+        <h2>Prototipos</h2>
+        <p>Es un mecanismo por el cual un objeto puede heredar de un objeto padre, atributos y Metodos</p>
+        
+        <script>
+            //programacion orienta a objetos ="POO"
+            /*tiene 4 conceptos basicos
+            1 clases- Es un modelo a seguir.
+            2 Objetos- Es una instancia o representacion de una clase 
+               2.1 atributos - Es una caracteristica o propiedad de un objeto (son variables dentro del objeto)
+               2.2 Metodos - son acciones que un objeto puede realizar (son funciones dentro del objeto)
+            */
+
+            const animal ={
+                nombre:"Tara",
+                sonar(){
+                    console.log("el sonido que hago")
+                },
+            };
+
+            const animal2 ={
+                nombre:"Lola",
+                sonar(){
+                    console.log("el sonido que hago")
+                },
+            };
+            console.log(animal);
+            console.log(animal2);
+            //Lo anterior esta bien, pero no es muy funcional a la hora de programar ya que los dos objetos son practicamente iguales y deberiamos simplificar el codigo, para ello se utilizara un prototipo de objeto de la siguiente manera
+
+            //Funcion constructora: la funcion constructora se declara solo una vez para apartir de ella generar nuevas instancia u objetos. cuando realicemos una funcion constructoras tanto los atributos como los metodos deben ir acompañados de this. 
+
+            function Animal(nombre,genero) {
+                this.nombre = nombre;
+                this.genero = genero;
+                
+                this.sonar = function(){
+                    console.log("El sonido que hago");
+                }
+                this.saludar = function(){
+                    console.log(`Hola me llamo ${this.nombre}`);
+                }
+            }
+
+            const tara = new Animal("Tara","Hembra"),
+                  lola = new Animal("Lola", "hembra");
+            console.log(tara,lola);
+            
+            tara.sonar();
+            tara.saludar();
+
+            lola.sonar();
+            lola.saludar();
+
+            //Funcion constructora con los metodos asignados al prototipo no a la funcion, asi no se generara un codigo inecesario
+
+            function AnimalConMetodoFuera(nombre,genero) {
+                this.nombre = nombre;
+                this.genero = genero;
+             }
+            
+             //Metodos agregados al prototipo de la funcion constructora
+            AnimalConMetodoFuera.prototype.sonar = function(){
+                    console.log("El sonido que hago");
+                }
+            AnimalConMetodoFuera.prototype.saludar = function(){
+                    console.log(`Hola me llamo ${this.nombre}`);
+                }
+
+            //herencia prototipica
+
+            function Perro(nombre,genero,tamanio) {
+                this.super = AnimalConMetodoFuera;
+                this.super(nombre,genero);
+                this.tamanio = tamanio;
+            } 
+
+            //Perro esta heredando de AnimalConMetodoFuera
+
+            Perro.prototype = new AnimalConMetodoFuera();
+            Perro.prototype.constructor = Perro;
+
+            //sobreescritura de metodo del prototipo padre en el hijo
+
+            Perro.prototype.sonar = function() {
+                console.log("soy un perro y mi sonido es un ladrido");
+            }
+
+            Perro.prototype.ladrar = function() {
+                console.log("guau")
+            }
+
+            const tara2 = new Perro("Tara","Hembra","Mediano"),
+                  lola2 = new AnimalConMetodoFuera("Lola", "hembra");
+            console.log(tara2,lola2);
+
+            tara2.sonar();
+            tara2.saludar();
+            tara2.ladrar();
+
+            lola2.sonar();
+            lola2.saludar();
+
+
+        </script>
+
+    </body>
+    </html>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevos tipos de datos JS</title>
+</head>
+
+<body>
+  <h1>Nuevos tipos de datos JS</h1>
+  <h2>Symbols</h2>
+  <p>Symbol es un tipo de dato primitivo que fue introducido despues del estandar ES5, cuando se crea un simbolo su
+    valor se va a mantener privado y para uso interno.</p>
+  <script>
+    //Para crear el dato Symbol no se debe llamar con el operador new sino con la funcion contructora Symbol
+
+    let id = "Hola";
+    let id2 = "Hola";
+
+    console.log(id === id2); //esto va a dar como resultado true
+
+    let i = Symbol();
+    let i2 = Symbol();
+    console.log(i === i2); //Esto sera false ya que son iguales aparentemente el dato symbol creara una referencia unica
+
+    const NOMBRE = Symbol("nombre");
+    const SALUDAR = Symbol("saludar");
+
+    const persona = {
+      [NOMBRE]: "David"
+    }
+    console.log(persona);
+
+    persona.NOMBRE = "Alejandro";//Creo una nueva propiedad Nombre y no va a pasar nada con el Symbol
+    persona.edad = 27
+
+    console.log(persona);
+    console.log(persona.NOMBRE);
+    console.log(persona[NOMBRE]);//para llamar el Symbol se tiene que hacer con los []
+
+    persona[SALUDAR] = function () {
+      console.log(`Hola`);
+    };
+
+    console.log(persona);
+    console.log(persona[SALUDAR]);
+    persona[SALUDAR]();//Asi se invocaria la funcion que hay dentro del symbol
+
+    for (const propiedad in persona) {
+      console.log(propiedad);
+      console.log(persona[propiedad]);
+    }//no se van a mostrar los Symbol
+
+    console.log(Object.getOwnPropertySymbols(persona)); //para poder listar los simbolos es con Object.getOwnPropertySymbols(persona)
+
+  </script>
+</body>
+
+</html>

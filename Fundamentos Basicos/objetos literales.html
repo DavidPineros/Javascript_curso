@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <body>
+        <h1>Fundamentos javascript</h1>
+        <h2>Objetos Literales</h2>
+        <p>Es una nueva forma de asignar variables a propiedades de los objetos, y tambien cambia la forma de escribir una funcion dentro del objeto, ajilizando el proceso de escritura de nuestro objeto</p>                     
+        <script>
+            // forma anterior de asignar variables o metodos dentro de un objeto
+
+            let nombre = "Tara",
+                edad = 9;
+
+            const perro={
+                nombre:nombre,
+                edad:edad,
+                ladrar: function(){
+                    console.log("guau guau")
+                }
+            };
+            console.log(perro);
+            perro.ladrar();
+
+            //con las nuevas caracteristicas
+
+            const dog = {
+                //si la variable y propiedad del objeto tienen el mismo nombre se hara de esta manera
+                nombre,
+                edad,
+                raza: "Golden Retriever",
+                ladrar(){
+                    console.log("guau guau hola")
+                }
+            };
+
+            console.log(dog);
+            dog.ladrar()
+        </script>
+    </body>
+    </html>
+</body>
+</html>

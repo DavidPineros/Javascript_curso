@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevos tipos de datos JS</title>
+</head>
+
+<body>
+  <h1>Nuevos tipos de datos JS</h1>
+  <h2>Propiedades Dinamicas de los Objetos</h2>
+  <p>Es una caracteristica nueva propias de los objetos.
+    <br>
+
+  </p>
+  <script>
+    let aleatorio = Math.round(Math.random() * 100 + 5);
+    const objUsuarios = {
+      [`id_${aleatorio}`]: "Valor Aleatorio" //propiedad dinamica dentro de la construccion del objeto literal
+    };
+    const usuarios = ["David", "Nubia", "Rodolfo", "Tara", "Eugenia", "Luis", "Constanza", "Alejandro"];
+    console.log(objUsuarios);
+
+    usuarios.forEach((usuario, index) => objUsuarios[`id_${index}`] = usuario);
+
+    console.log(objUsuarios);
+  </script>
+</body>
+
+</html>

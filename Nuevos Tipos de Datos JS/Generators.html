@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevos tipos de datos JS</title>
+</head>
+
+<body>
+  <h1>Nuevos tipos de datos JS</h1>
+  <h2>Generators</h2>
+  <p>Los generadores es una sintaxis mas sencilla para generar iteradores. dentro de una funcion
+    esta se realizara en una funcion que para que JS detecte que es una funcion generadora de un iterador va tener un *
+    justo al final de la palabra function <br> ejm: function* iterable() {}.
+  </p>
+  <p>para retornar algo en una funcion generadora se utiliza la pabra yield en lugar de return</p>
+  <script>
+    function* iterable() {
+      yield "hola";
+      console.log("Hola consola");
+      yield "hola 2";
+      console.log("Hola consola, seguimos con mas instrucciones del codigo");
+      yield "hola 3";
+      yield "hola 4";
+    }
+
+    let iterador = iterable();
+    /* console.log(iterador.next());
+     console.log(iterador.next());
+     console.log(iterador.next());
+     console.log(iterador.next());
+     console.log(iterador.next());*/
+
+    for (const y of iterador) {
+      console.log(y)
+    };
+
+    const arr = [...iterable()];
+    console.log(arr);
+
+    function cuadrado(valor) {
+      setTimeout(() => {
+        return console.log({
+          valor,
+          resultado: valor * valor
+        })
+      }, Math.random() * 1000);
+
+
+    }
+
+    function* generador() {
+      console.log("inicia generator");
+      yield cuadrado(0);
+      yield cuadrado(1);
+      yield cuadrado(2);
+      yield cuadrado(3);
+      yield cuadrado(4);
+      yield cuadrado(5);
+      console.log("termina generator");
+    }
+
+    let gen = generador()
+    for (const y of gen) {
+      console.log(y);
+    }
+  </script>
+</body>
+
+</html>

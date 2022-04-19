@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <body>
+        <h1>Fundamentos javascript</h1>
+        <h2>Estructuras de control</h2>
+        <h3>Loops (ciclos)</h3> 
+        <p>Son estructuras repetitivas, que se ejecutan hasta que se cumpla una condicion, estas estructuras necesitan agregar una aumento o disminucion de la variable</p>               
+        <script>
+            //while = mientras
+            //con while siempre se compararan la condicion y empezara el ciclo
+            let contador = 0;
+            while (contador < 10) {
+                console.log("while"+ contador);
+                contador++;
+            };
+
+            //do while
+            //mientras que con do while se geneerara la linea de codigo y despues comparara
+
+            do{
+                console.log("do while" + contador);
+                contador++; 
+            }while((contador < 10));
+
+            //for . este es el bluque mas utilizado
+            //for (declaracion y inicializacion de variable; condicion a cumplir, incremento o decremento){lo que queremos quese realice}
+
+            /*for (let index = 0; index < array.length; index++) {
+                const element = array[index];
+                
+            }*/
+            for (let i = 0; i <10; i++) {
+                console.log("for" + i);
+            }
+
+            let numeros =[10,20,30,40,50,60,70,80,90,100]
+
+            for (let i = 0; i <numeros.length; i++) {
+                console.log(numeros[i]);
+            };
+
+            // forin - forof
+            //forin: es un loop que me permite recorrer los atibutos o propiedades de un objeto
+
+            const David = {
+                nombre:"David",
+                apellido:"Pinto",
+                edad:27,
+            };
+
+            for (const propiedad in David) {
+               console.log(propiedad);
+            };
+
+            for (const propiedad in David) {
+               console.log(`Key:${propiedad},Value:${David[propiedad]}`);
+            }
+
+            //forof
+            //me permite recorrer todos los elementos de cualquier objeto iterable-(que se pueda dividir en pequeños elementos) en js, arrays, strings
+
+            for (const elemento of numeros) {
+                console.log(elemento);                
+            }
+            
+            let cadena ="Hola Mundillo"
+
+            for (const caracter of cadena) {
+                console.log(caracter)
+            }
+
+
+        </script>
+    </body>
+    </html>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <h1>Fundamentos javascript</h1>
+    <h2>Tipos de datos: objetos</h2>
+    <a href="tiposDeDatos.html">Tipo de tiposDeDatos</a>
+    
+    <script>
+        //un objeto es una coleccion de llaves-valores
+        //dentro de un objeto a las variables se les llamara atributos o propiedades, mientras a las funciones se les llamara metodos
+        const a = new Object(); //no es lo mas recomendable
+        const b = {};
+        console.log(b);
+
+        const yo = {
+            nombre:"David",
+            Apellido:"Pinto",
+            Edad:27,
+            Pasatiempos:["Montar Bici", "ver deportes", "aprender"],
+            soltero:true,
+            contacto: {
+                email:"davidpinerospinto@gmail.com",
+                teleefono:3165782362,
+                instagram:"davidyya",
+            },
+            saludar: function(){
+                console.log(`Hola Mundo :)`)
+            },
+            decirMiNombre: function(){
+                console.log(`Hola me llamo ${this.nombre} ${this.Apellido} y tengo ${this.Edad} años, y me puedes enviar un mensaje a ${this.contacto.email}.`)
+            },
+        }
+        console.log(yo);
+        console.log(yo["nombre"]);
+        console.log(yo["Apellido"]);
+        console.log(yo.Pasatiempos[1]);
+        console.log(yo.contacto.email);
+        console.log(yo.nombre);//para acceder a un atributo del objeto
+        yo.saludar(); //esta funcion no la imprimo en consola con un console.log() por que la funcion tiene uno interno lo cual me generaria un error
+        yo.decirMiNombre()
+
+        //algunos metodos
+
+        console.log(Object.keys(yo));//este es un metodo que permite listar todas las llaves o variable que estan dentro del objeto 
+        console.log(Object.values(yo));// lista los valores de variables del objeto
+        console.log(yo.hasOwnProperty("nombre"));
+        console.log(yo.hasOwnProperty("nacimiento"));//evalua si el nombre de la variable existe dentro del objeto
+
+    </script>
+</body>
+</html>

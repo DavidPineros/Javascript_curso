@@ -1,0 +1,100 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+    </head>
+    <body>
+        <h1>Fundamentos javascript</h1>
+        <h2>Objeto Console</h2>
+        <p>console es un objeto que ya reconoce js cy tiene sus metodos y su prototipo diseñado </p>
+           
+        <script>
+           console.log(console);
+           console.error("Esto es un error");
+           console.warn("Esto es un aviso(warn)");
+           console.info("Hola, esto es un mensaje informativo");
+           console.log("un registro de lo que pasa en nuestro programa o app");
+
+           let nombre = "David",
+              apellido= "Pinto",
+              edad= 27;
+
+            console.log(nombre);
+            console.log(apellido);
+            console.log(edad);
+            console.log(nombre,apellido,edad);
+            console.log(`Hola mi nombre es ${nombre}${apellido} y tengo ${edad} años.`);
+            console.log(`Hola mi nombre es %s %s y tengo %d años.`, nombre, apellido,edad);
+
+            //console.clear();
+
+            console.log(window);
+            console.log(document);
+            console.dir(window);
+            console.dir(document);
+
+            console.clear();
+
+            console.group("Los Videos de youtube");
+            console.log("videos Js");
+            console.log("Videos Html");
+            console.log("Videos Css");
+            console.log("Videos flexbox");
+            console.log("Videos programacion web");
+            console.groupEnd();
+
+            console.groupCollapsed("Los Videos de youtube");
+            console.log("videos Js");
+            console.log("Videos Html");
+            console.log("Videos Css");
+            console.log("Videos flexbox");
+            console.log("Videos programacion web");
+            console.groupEnd();
+
+            console.log(console);
+            console.table(Object.entries(console).sort());
+
+            const numeros =[1,2,3,4,5],
+                  vocales =["a","e","i","o","u"];
+
+            console.table(numeros);
+            console.table(vocales);
+
+            const perro = {
+                nombre:"Boni",
+                raza:"boxer",
+                color:"cafe"
+            }
+            console.table(perro);
+            //console.clear();
+
+            console.time(`Cuanto tiempo tarda mi codigo`);
+            const arreglo =Array(1000000);
+
+            for(let i = 0; i < arreglo.length; i++){
+                arreglo[i] = i
+            }
+
+            console.timeEnd(`Cuanto tiempo tarda mi codigo`);
+            console.log(arreglo);
+            //console.clear();
+
+            for(let i = 0; i <= 100; i++){
+                console.count("Codigo for");
+                console.log(i);
+            }
+
+            //console.clear();
+
+            let x =3,
+            y=2,
+            pruebaXY ="Se espera que X sea menor que Y";
+
+            console.assert(x<y,(x,y,pruebaXY))
+
+        </script>
+     </body>
+    </html>       

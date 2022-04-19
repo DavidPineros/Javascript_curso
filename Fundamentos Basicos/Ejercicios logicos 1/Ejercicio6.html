@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+    </head>
+    <body>
+        <h1>Fundamentos javascript</h1>
+        <h2>Ejercicio 6 </h2>
+        <p>18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.</p>
+        <p>19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.</p>
+        <p>20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.</p>
+
+        <script>
+            //ejercicio 1
+
+            const contarLetras = (cadena = "") => {
+                if(!cadena) return console.warn("No ingreso una cadena de texto");
+                if(typeof cadena !== "string") return console.error(`El valor "${cadena}"" no es una cadena de texto`);
+
+                let vocales = 0,
+                consonantes = 0;
+
+                cadena = cadena.toLocaleLowerCase();
+
+                for (const letra of cadena) {
+                    if(/[aeiou]/.test(letra)){
+                        vocales++;
+                    } 
+                    if(/[bcdfghjklmnñpqrtvwxyz]/.test(letra)){
+                        consonantes++;
+                    }                     
+                }
+                return console.info({
+                    cadena,
+                    vocales,
+                    consonantes,
+                })
+            }
+
+            contarLetras("Yo no soy el que soy");
+            contarLetras("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum exercitationem veritatis atque quaerat, ad, beatae similique fugit veniam rem sequi incidunt minus ratione voluptas ipsam omnis sint optio tempora ab.")
+
+            //ejercicio 2 /validar un nombre
+
+            const validarNombre = (nombre="") =>{
+                if(!nombre) return console.warn("No ingreso una nombre");
+                if(typeof nombre !== "string") return console.error(`El valor "${nombre}" no es un valor correcto`);
+
+                let expReg = /^[A-Za-zÑñ\s]+$/g.test(nombre);
+
+                return(expReg)
+                ?console.log(`"${nombre}", es un nombre valido`)
+                :console.warn(`"${nombre}, No es un nombre valido`);
+            }
+            validarNombre();
+            validarNombre("David Alejandro Piñeros");
+
+            //ejercicio 3 /validar  email
+
+            const validarEmail = (email="") =>{
+                if(!email) return console.warn("No ingreso un email");
+                if(typeof email !== "string") return console.error(`El valor "${email}" no es una cadena de texto`);
+
+                let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+
+                return(expReg)
+                ?console.log(`"${email}", es un email valido`)
+                :console.warn(`"${email}, No es un email valido`);
+            }
+            validarEmail();
+            validarEmail("DavidAlejandroPiñeros@gmail.com");
+
+
+
+
+        </script>
+      
+     </body>
+    </html> 
+
+    
+

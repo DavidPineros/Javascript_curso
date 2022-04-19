@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <body>
+        <h1>Fundamentos javascript</h1>
+        <h2>Parametros Rest & Operador Spread</h2>
+        <p></p>
+        <script>
+           // rest: este sirve para definir parametros infinitos dentro de una funcion, y se define con tres puntos suspencivos como se ve a continuacion
+           
+           function sumar (a,b,...c){
+               let resultado = a + b;
+               c.forEach(function(n){//como se vio anteriormente foreach permite realizar una funcion con los elementos de un array
+                   resultado += n
+               });
+               return resultado;
+           };
+           console.log(sumar(1,2));
+           console.log(sumar(1,2,3));
+           console.log(sumar(1,2,3,4));
+           console.log(sumar(1,2,3,4,5));
+           console.log(sumar(1,2,3,4,5,6));
+
+           //Operador spread: se ejecuta en cualquier sentecia del codigo
+           const arr1 =[1,2,3,4,5];
+           const arr2 =[6,7,8,9,0];
+           console.log(arr1,arr2);
+
+           const arr3=[arr2,arr1];
+
+           const arrConOpSpread = [...arr1, ...arr2];
+
+           console.log(arr3,arrConOpSpread);
+        </script>
+    </body>
+    </html>
+</body>
+</html>

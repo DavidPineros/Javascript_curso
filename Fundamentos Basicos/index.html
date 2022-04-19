@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <h1>Fundamentos javascript</h1>
+    <h2>Variables</h2>
+    <a href="Tipos de datos/tiposDeDatos.html">Tipos De Datos</a><br>
+    <a href="tipos de operadores/TiposDeOperadores.html">Tipos de Operadores.</a><br>
+    <a href="Estructuras de control/condicionales.html">Condicionales</a><br>
+    <a href="Estructuras de control/Manejo de errores.html">Manejo de errores</a><br>
+    <a href="Destructuracion.html">Destructuracion</a><br>
+    <a href="objetos literales.html">Objetos literales</a><br>
+    <a href="ParametrosRest&Operadorspread.html">Parametros Rest & Operador Spread</a><br>
+    <a href="Arrowfunction.html">Arrow function</a><br>
+    <a href="Prototipos.html">Prototipos</a><br>
+    <a href="Herencia Prototipica.html">Herencia Prototipica</a><br>
+    <a href="Clases y herencia de clases.html">Clases y herencia de clases</a><br>
+    <a href="Objeto console.html">Objeto console</a><br>
+    <a href="Objeto Date.html">Objeto Date</a><br>
+    <a href="Objeto math.html">Objeto math</a><br>
+    <a href="tipos de operadores/OperadorCortocircuito.html">OperadorCortocircuito</a><br>
+    <a href="alert, confirm, y prompt.html">alert, confirm y prompt</a><br>
+    <a href="Expresiones regulares.html">Expresiones regulares</a><br>
+    <a href="funciones Anonimas.html">funciones Anonimas</a><br>
+    <a href="modulosImport-Export.html">Modulos Import/Export</a><br>
+    <a href="Ejercicios logicos 1/Ejercicios Logicos 1.html">Ejercicios Logicos 1</a>
+    <script>
+        var hola= "hola mundo";
+        let hello = "hello world";
+        console.log(hola);
+        console.log(hello);
+        console.log(window);
+        console.log(window.hola);
+        console.log(window.hello);
+        //Ambito de bloque
+        //esto es un bloque
+        console.log("**********var, mala practica***********")
+        var musica = "Rock";
+        console.log("Variable Musica antes del bloque", musica);
+        {
+            var musica = "Pop";
+            console.log("Variable Musica dentro del bloque", musica);
+        };
+        console.log("Variable Musica despues del bloque", musica);
+
+        console.log("********let, buena practica***********")
+
+        let musica2 = "Rock";
+        console.log("Variable Musica antes del bloque", musica2);
+        {
+            let musica2 = "Pop";
+            console.log("Variable Musica dentro del bloque", musica2);
+        };
+        console.log("Variable Musica despues del bloque", musica2);
+        
+        let a;
+        const PI = 3.1416;
+        console.log(PI);
+
+        a = "Tokyo";
+        console.log(a);
+
+        //const siempre tiene que inicializarce con un valor a diferencia de let y var
+        // const no podra cambiar su dato si este es primitivo a diferencia si es compuesto
+
+        const objeto = {
+            nombre: "David",
+            edad: "27"
+        };
+        const colores = ["azul", "blaco", "negro"];
+
+        console.log(objeto);
+        console.log(colores);
+
+        objeto.correo = "davidpinerospinto@gmail.com";
+        colores.push("morado");
+        
+        console.log(objeto);
+        console.log(colores);
+
+    </script>
+</body>
+</html>

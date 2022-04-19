@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+    </head>
+    <body>
+        <h1>Fundamentos javascript</h1>
+        <h2>Alert, Confirm, Prompt</h2>
+        <p>Estos son tres metodos que cuelgan del objetos Window, por lo que solo van a estar disponibles para js del lado del navegador y no le los servidores </p>
+           
+        <script>
+            console.log(window);
+            //no es necesario poner window. aunque si son objetos que cuelgan de window
+            //alert("Hola esto es una alerta (alert)");
+            //confirm("Hola esto es una confirmacion (confirm)");
+            //prompt("Hola esto es un prompt y permite al usuario ingresar un valor")
+
+            let alerta = alert("Hola esto es una alerta (alert)"),
+            confirmacion = confirm("Hola esto es una confirmacion (confirm)"),
+            aviso = prompt("Hola esto es un aviso y permite al usuario ingresar un valor");
+
+            console.log(alerta);
+            console.log(confirmacion);
+            console.log(aviso);
+
+        </script>
+     </body>
+    </html> 

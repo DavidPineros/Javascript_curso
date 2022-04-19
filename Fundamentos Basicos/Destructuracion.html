@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <body>
+        <h1>Fundamentos javascript</h1>
+        <h2>Destructuracion</h2>
+        <p>Es una forma de asignar valores sobre todo a arrays y object, y son mas counes en librerias como angular react o vue</p>                     
+        <script>
+            //sin Destructuracion
+            const numeros = [1,2,3];
+            let uno = numeros[0],
+                dos = numeros[1],
+                tres= numeros[2];
+            console.log(uno,dos,tres);
+
+            //Con Destructuracion
+            const [one,two,three] = numeros;
+            console.log(one,two,three);
+
+            const yo = {
+                nombre: "David",
+                apellido: "Pinto",
+                edad:27
+            }
+            
+            const {nombre,apellido,edad} = yo
+            console.log(nombre,apellido,edad)
+
+        </script>
+    </body>
+    </html>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <h1>Fundamentos javascript</h1>
+    <h2>Manejo de errores</h2>
+    <script>
+        // estructura try-chatch-finally
+        try {
+            console.log("En el try se agrega el bloque de codigo a evaluar");
+            noExiste;//este es un error intencional de una variable que no se ha inicializado
+            console.log("Segundo bloque de codigo para el try");
+        } catch (error) {
+            console.log("Catch captura cualquier error surgido o lanzado en el try");
+            console.log(error);
+        } finally{
+            console.log("el bloque finally se ejecutara siempre al final de un bloque try-catch");
+        };
+
+        //mensaje personalizado para generar errores
+        
+        try {
+            let numero = "a";
+            if(isNaN(numero)){
+                throw new Error("El caracter introducido no es un numero")
+            }
+            console.log(numero*numero)
+        } catch (error) {
+            console.log(`Se produco el siguiente error: ${error}`)
+        }
+        // isNaN es una funcion donde se pasa una variable para saber si es un dato tipo numero o no 
+    </script>
+</body>
+</html>

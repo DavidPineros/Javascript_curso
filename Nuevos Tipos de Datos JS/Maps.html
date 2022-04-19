@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevos tipos de datos JS</title>
+</head>
+
+<body>
+  <h1>Nuevos tipos de datos JS</h1>
+  <h2>Maps</h2>
+  <p>los maps son objetos que nos sirven para almacenar valores asociados a manera de objeto primitivo, </p>
+  <script>
+    const mapa = new Map();
+
+    //para agregar un valor es con el metodo set
+
+    mapa.set("nombre", "David");
+    mapa.set("apellido", "Pinto");
+    mapa.set("edad", 27);
+
+    console.log(mapa);
+    console.log(mapa.size);//size se utiliza para saber cuantos elementos tiene mi Map
+    console.log(mapa.has("correo"));//el metodo has de Map sirve para saver si hay una llave con sierto caracter devolvera true o false
+    console.log(mapa.has("nombre"));
+    console.log(mapa.get("nombre"));//obtiene el valor que se encuentra dentro de la llave nombre de Map
+    mapa.set("nombre", "David Pinto");//se sobreescribe la llave nombre
+    console.log(mapa.get("nombre"));
+    mapa.delete("apellido");
+    console.log(mapa);
+
+    //para recorrer el Map se puede hacer de la siguient manera
+
+    for (const [key, value] of mapa) {
+      console.log(`LLave: ${key}, Valor: ${value}`);
+    }
+
+    //otra manera de crear un Map
+
+    const mapa2 = new Map([
+      ["Nombre", "Tara"],
+      ["Edad", 10],
+      ["Raza", "golden retriever"],
+    ])
+    console.log(mapa2);
+
+    const llavesMapa2 = [...mapa2.keys()];
+    const valoresMapa2 = [...mapa2.values()];
+
+    console.log(llavesMapa2);
+    console.log(valoresMapa2);
+  </script>
+</body>
+
+</html>

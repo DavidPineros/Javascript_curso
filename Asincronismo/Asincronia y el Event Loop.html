@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asincronismo en JS</title>
+</head>
+
+<body>
+  <h1>Asincronia en JavaScript</h1>
+
+  <h2>Asincronia y Event Loop</h2>
+
+  <p>Para empezar JavaScript es un lenguaje de programacion Single Thread ya que tiene un solo hilo de ejecucion <br>
+
+    Hay operacion concurrente y paralelas <br>
+    Las operaciones concurrentes son las que <strong>PROGRESAN</strong> al mismo tiempo, mientras que las paralelas se
+    ejecutan de forma simultanea. <br>
+
+    Tambien existen operaciones bloqueantes y no bloqueantes: <br>
+    Estan estan relacionadas a la fase de espera de la operacion, mientras la operacion bloqueante no devuelve el
+    control de la operacion a la aplicacion hasta que no termine la tarea que tiene programada, y la operacion no
+    bloqueante es la que devuelve el control de la operacion cuando se ejecuta sin importar que se haya terminado o no
+    la tarea. <br>
+
+    Por otro lado estan las operaciones Asincronas y Sincronas: <br>
+    Estan estan definidas por cuando tendra lugar la respuesta, ya que si una operacion es sincrona se refiere a que la
+    respuesta se dara en tiempo presente de inmediato, mientras que asincrono se ejecuta pero no esperara el resultado.
+
+
+  </p>
+
+  <p><strong>JavaScript usa un modelo asincrono y no bloqueante, con un loop de evetos implementado en un solo hilo
+      (single Thread) para operaciones de entrada y salida (input/output).</strong></p>
+
+  <script>
+    /*Codigo sincrono bloqueante*/
+    (() => {
+      console.log("Codigo Sincrono");
+      console.log("Inicio");
+
+      function dos() {
+        console.log("Dos");
+      }
+      function uno() {
+        console.log("Uno");
+        dos();
+        console.log("Tres");
+      }
+
+      uno();
+      console.log("Fin")
+    })();
+
+    /*codigo asincrono no bloqueante*/
+
+    (() => {
+      console.log("Codigo Asincrono");
+      console.log("Inicio");
+
+      function dos() {
+        setTimeout(() => {
+          console.log("Dos");
+
+        }, 1000);
+      }
+      function uno() {
+        setTimeout(() => {
+          console.log("Uno");
+        }, 0);
+        dos();
+        console.log("Tres");
+      }
+
+      uno();
+      console.log("Fin");
+    })();
+  </script>
+</body>
+
+</html>

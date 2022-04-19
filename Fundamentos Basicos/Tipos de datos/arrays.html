@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+    </head>
+    <body>
+        <h1>Fundamentos javascript</h1>
+        <h2>Tipos de datos: Arrays</h2>
+           
+        <script>
+           //Un arreglo es una coleccion de elementos, de uno o varios tipos de datos
+           //Los arreglos de declaran de la siguiente manera, pero la manera mas correcta es la segunda o tercera
+           //a = [];
+           const a = [];
+           const b = [1,Boolean,"Hola soy el elemto en la posicion 2",["a","b","c"]];
+           const c = Array.of("a",8,Boolean);
+           console.log(a);
+           console.log(b);
+           console.log(b.length);
+           console.log(c);
+           //los elementos de los arreglos tienen una posicion dentro del arreglo, el cual estan enumerados y el elementos inicial siempre iniciara con la posicion 0.
+           console.log(b[2]);
+           console.log(b[3][2]);
+           //para acceder a uno de los elementos del array se debera nombrar el array tener el simbolo [] y dentro poner la posicion que ocupa el elemto deseado
+           const d = Array(100).fill(false);
+           console.log(d);
+           //de esta manera se genera un array de 100 posiciones con un valor de falso  
+           //las siguientes maneras de declarar un array no son muy comunes
+           
+           const e = new Array();
+           const f = new Array(1,2,3,4,true,false);
+           console.log(e,f)
+
+           //algunos metodos de los arrays
+
+           const colores = ["rojo","azul","verde"];
+           console.log(colores);
+           colores.push("negro");//agrega un nuevo elemento al array
+           console.log(colores);
+           colores.pop();//elimina el ultimo elemento del array
+           console.log(colores);
+           colores.forEach(function(el, index) {
+               console.log(`<li id="${index}">${el}<li>`);
+           });//el metodo forEach() permite que se haga una funcion con cada uno de los elementos del array
+        </script>
+     </body>
+    </html>       

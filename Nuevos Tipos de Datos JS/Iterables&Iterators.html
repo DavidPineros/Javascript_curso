@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevos tipos de datos JS</title>
+</head>
+
+<body>
+  <h1>Nuevos tipos de datos JS</h1>
+  <h2>Iterables & Iterators</h2>
+  <p>Esta son caracteristicas que tienen algunos de los tipos de datos en JS. <br>
+    Los tipos de datos iterables son aquellos que tienen una estructura de datos lineal que sus elementos son publicos y
+    se puedan recorrer como lo pueden ser arreglos, strings, maps, sets e incluso elementos del DOM <br>
+
+    El iterador es el mecanismo por el cual se recorre los elementos iterables como pueden ser , la destructuracion,
+    metodos for, forof, spread operator, promises
+  </p>
+  <script>
+    const iterable = [1, 2, 3, 4, 5, 6];
+    const iterador = iterable[Symbol.iterator](); //Accedemos al itedador del iterable.
+
+    console.log(iterador);
+    //console.log(iterador.next()); //El iterador va a devolver un objeto con dos propiedades: el valor y un segundo valor que indicara si ya se acabaron los elementos
+    /*console.log(iterador.next());
+    console.log(iterador.next());
+    console.log(iterador.next());
+    console.log(iterador.next());
+    console.log(iterador.next());
+    console.log(iterador.next());*/
+
+    let next = iterador.next();
+
+    while (!next.done) {
+      console.log(next.value);
+      next = iterador.next();
+    }
+  </script>
+</body>
+
+</html>

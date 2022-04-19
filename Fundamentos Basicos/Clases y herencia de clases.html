@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <body>
+        <h1>Fundamentos javascript</h1>
+        <h2>Clases y Herencia de Clases</h2>
+        <p></p>
+        
+        <script>
+            //Funcion constructora
+            /*function Animal(nombre,genero) {
+                //atributos
+                this.nombre = nombre;
+                this.genero = genero;
+                //metodos
+                this.sonar = function(){
+                    console.log("El sonido que hago");
+                }
+                this.saludar = function(){
+                    console.log(`Hola me llamo ${this.nombre}`);
+                }
+            }*/
+
+            //Clases
+            class Animal{
+                //el constructor de una clase es un metodo especial que se ejecuta en el momento de instanciar la clase y alli se ponen los parametros que recibira la clase o funcion
+                constructor(nombre,genero){
+                    this.nombre = nombre;
+                    this.genero = genero;
+                }
+                //metodos
+                sonar(){
+                    console.log("El sonido que hago");
+                };
+                saludar(){
+                    console.log(`Hola me llamo ${this.nombre}`);
+                };
+            }
+
+                        
+            //Herencia de Clases
+            class Perro extends Animal{
+                constructor(nombre,genero,tamanio){
+                    //con el metodo suoer() se manda a llamr el constructor de la clase padre
+                    super(nombre,genero);
+                    this.tamanio = tamanio;
+                    this.raza = null;
+                }
+                sonar(){
+                    console.log("Soy un perro y mi sonido es un ladrido")
+                }
+                ladrar(){
+                    console.log("Guauuu")
+                }
+                //Un metodo estatico se pueden ejecutar sin necesidad de instanciar la clase
+                static queEres() {
+                    console.log("Los perros somos animales mamiferos y nos concideran el mejor amigo del hombre.")
+                };
+                //Los mentodos setters y getters son metodos especiales que nos permiten establecer y obtener los valores de atributos de nuestra clase
+                get getRaza(){
+                    return this.raza;
+                }
+                set setRaza(raza){
+                   this.raza = raza;
+                }   
+            }
+
+            Perro.queEres();
+            const mini = new Animal("Mini","Hembra"),
+                scooby = new Perro("Scooby","Macho","Gisante"),
+                  tara = new Perro("Tara","hembra","Grande");
+
+            console.log(mini);
+            mini.sonar();
+            mini.saludar();
+            console.log(mini);
+            scooby.sonar();
+            scooby.saludar();
+            console.log(tara);
+            tara.saludar();
+            tara.sonar();
+            tara.ladrar();
+            console.log(tara.getRaza);
+            tara.setRaza = "Golden retriever"
+            console.log(tara.getRaza);
+            
+
+                 
+        </script>
+
+    </body>
+    </html>
+</body>
+</html>

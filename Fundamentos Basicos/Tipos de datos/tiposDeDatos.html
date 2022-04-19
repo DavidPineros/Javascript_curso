@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <h1>Fundamentos javascript</h1>
+    <h2>Tipos de datos</h2>
+      <h3><a href="tipodedatonumeros.html">Tipo de datos numeros</a></h3>
+      <a href="tipodedatoboolean.html">Tipode dato Boolean</a><br>
+      <a href="Datos(NaN,undefained,null).html">Tipode dato NaN, null, Undefained</a><br>
+      <a href="funciones.html">Tipo de dato : Function</a><br>
+      <a href="arrays.html">tipo de dato: arrays</a>
+      <a href="objetos.html">Tipo de dato: objetos</a>
+
+    <script>
+        //cadena de texto : Strings
+        let nombre = "David";
+        let apellido = "Pinto";
+        let saludo = new String("Hola señor");
+        let lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, optio ullam earum dolorem consectetur quod vero saepe. Quam, culpa. Laboriosam ex ducimus consectetur fugit esse natus incidunt reiciendis non nostrum ?"
+
+        console.log(saludo,nombre,apellido);
+        console.log(
+            saludo.length,
+            nombre.length,
+            apellido.length,
+            nombre.toUpperCase(),
+            apellido.toLowerCase(),
+            lorem.includes("amet"),
+            lorem.includes("David"),
+            lorem.trim(),
+            lorem.split(" "),
+        )
+        //length es una propiedad del tipo de dato string
+        //mientras los demas son metodos con referencia al stringh llamado 
+
+        //concatenacion
+
+        let nombre2 = "Alejandro";
+        let apellido2 = "Pinto";
+
+        let saludar = "Hola mi nombre es" + " " + nombre2 + " " + apellido2 + ".";
+        console.log(saludar);
+
+        //interpollacion de variables. para esto se necesita la opcion template string que se realizara con las comillas invertidas
+
+        let saludo2 = `Hola mi nombre es ${nombre2} ${apellido2}. Con interpolacion de variable. `
+        console.log(saludo2);
+
+        let ul = "<ul><li>Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul>";
+        console.log(ul);
+
+        let ul2 = `
+            <ul>
+                <li>Primavera</li>
+                <li>Verano</li>
+                <li>Otoño</li>
+                <li>Invierno</li>
+            </ul>`;
+        console.log(ul2);//Esta es la opcion mas adecuada.
+
+        let ul3 = "<ul>";
+            ul3 +=" <li>Primavera</li>";
+            ul3 +=" <li>verano</li>";
+            ul3 +=" <li>Otoño</li>";
+            ul3 +=" <li>Invierno</li>";
+        console.log(ul3);
+    </script>
+</body>
+</html>

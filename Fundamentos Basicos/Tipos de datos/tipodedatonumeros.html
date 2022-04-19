@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <h1>Fundamentos javascript</h1>
+    <h2>Tipos de datos: numeros</h2>
+    <a href="tipodedatoboolean.html">Tipode dato Boolean</a>
+    <script>
+    //en la variable b se construye un objeto de tipo numero
+        let a = 2;
+        let b = new Number(1);
+        let c = 7.19;
+        let d = "5.6"
+
+        console.log(a,b);
+        //tofixed es un metodo que dice cuantos numeros decimales se permitenen este numero, en este caso lo redondearia y quedaria 7.2
+        console.log(c.toFixed(1));
+        //parseint es un metodo que devuelve solo el numero entero, mientras que parsefload devolvera solo el decimal
+        console.log(parseInt(c));
+        console.log(parseFloat(c));
+
+        console.log(typeof c, typeof d);
+        console.log(a + b);
+        console.log(c + d);//En este se producira una concatenacion de datos porque un dato es number y el otro es string
+        console.log(c + parseInt(d));
+        console.log(c + parseFloat(d));
+        console.log(c + Number.parseInt(d));
+        console.log(c + Number.parseFloat(d));
+    </script>
+</body>
+</html>

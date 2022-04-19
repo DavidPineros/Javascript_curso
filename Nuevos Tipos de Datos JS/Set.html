@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevos tipos de datos JS</title>
+</head>
+
+<body>
+  <h1>Nuevos tipos de datos JS</h1>
+  <h2>Set</h2>
+  <p>Este es un tipo de dato muy similar al Array pero solo acepta valores unicos, en lo que respecta a valores
+    primitivos, en el caso de las strings tienen que ser iguales de una manera estricta "Hola" === "Hola"</p>
+  <script>
+
+    const set = new Set([1, 2, 3, 3, 4, 5, true, false, {}, {}, "hola", "HOLA", "hola"]);
+
+    console.log(set); //Lo que imprimira en consola sera los todos los elemtos quitando los que estan repetidos ejm : eliminaria un 3 y el "hola"
+
+    console.log(set.size); //para saber la longitud de un dato Set no sera como en el array que se llama la propiedad lenght sino que se llamara con size
+
+    const set2 = new Set();
+    set2.add(1);
+    set2.add(1)
+    set2.add(2)
+    set2.add([1, 2, 3, 4, 5])// Aqui se le agregara un elemento al Set
+
+
+    console.log(set2);
+
+    //para recorrer el Set se puede con forof /  foreach
+    console.info("Recorriendo set2 con for-of")
+    for (item of set2) {
+      console.log(item);
+    };
+
+    console.info("Recorriendo set con forEach");
+    set.forEach(item => console.log(item));
+
+    //para poder acceder a una posicion del Set no es como en un arreglo set[0] si no que tendriamos que convertir el set a un Array y en este momento si acceder a la posicion deseada
+
+    let arr = Array.from(set);
+    console.log(arr);
+    console.log(arr[0]);
+    console.log(arr[9]);
+
+    set.delete("HOLA"); //elimina un elemento del set
+    console.log(set);
+
+    console.log(set.has("hola"));
+    console.log(set.has(19));//busca si el valor ingresado existe dentro del set, devolvera true o false
+
+    set2.clear();//limpia el set
+    console.log(set2);
+
+  </script>
+</body>
+
+</html>

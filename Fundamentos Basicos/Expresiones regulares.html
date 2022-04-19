@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+    </head>
+    <body>
+        <h1>Fundamentos javascript</h1>
+        <h2>Expresiones regulares</h2>
+        <p> Es una secuencia de caracteres es un patron de busqueda y que se utiliza principalmente en cadenas de texto</p>
+        <a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">Expresiones regulares</a><br>
+        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions">Expresiones regulares JS</a>
+           
+        <script>
+            //hay dos maneras para declarar expresiones regulares
+            let cadena ="Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique expedita, tenetur explicabo, minima in perferendis excepturi laborum voluptas ea voluptate amet dolorum eaque iure omnis natus esse iusto doloremque deleniti!"
+            let expReg = new RegExp("lorem","ig");//i g son banderas que ayudan a direccionar la busqueda "i" ignora las mayusculas o minusculas, mientras que "g" continua la busqueda en este caso de lorem dentro de la variable cadena
+            console.log(expReg.test(cadena));//test devuelve un true/false si se cumple o no el patron que se esta buscando
+            console.log(expReg.exec(cadena)); //devuelve un arreglo con un objeto dentro con la informacion de la busqueda
+            
+            let expReg2 = /lorem{1}/ig;//esta es la segunda gorma de declarar una expresion regular con las mismas banderas ig
+            console.log(expReg2.test(cadena));
+            console.log(expReg2.exec(cadena));
+            
+
+        </script>
+     </body>
+    </html> 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <body>
+        <h1>Fundamentos javascript</h1>
+        <h2>Arrow function o funcion flecha</h2>
+        <p>Las arrow function es un cambio en la manera de como escribimos las funciones anonimas sobre todo la funcion expresadas, ya que son mas expresivas y tiene una mejor sintaxis</p>
+        <script>
+            //sin arrow function
+            const saludo = function(){
+                console.log(`Hola funcion anonima tradicional`)
+            }
+            saludo();
+
+            //con arrow function
+            const saludar = () =>{
+                console.log(`Hola con Arrow function`)
+            };
+            saludar();
+
+            //cuanto la funcion tiene una sola linea de codigo se puede sintetisar mas
+            const saludar2 = ()=>console.log(`Hola con Arrow function en una sola linea`);
+            saludar2();
+
+            //a este tipo de funciones tambien sele pueden aññadir parametros dentro de los parentesis
+            const saludarConParamentros = (nombre,apellido)=>console.log(`Hola ${nombre} ${apellido} con parametro`);
+            saludarConParamentros("Pepito","Perez");
+
+            //en caso de que la funcion reciba solo un parametro se pueden omitir los parentesis
+            const saludarSinParentesis = nombre => console.log(`Hola ${nombre} con parametro sin parentesis`);
+            saludarSinParentesis("Eugenia");
+
+
+            //OTRO EJEMPLO => sirve tambien como un return
+            //sin Arrow function
+            const sumar = function(a,b){
+                return a + b;
+            };
+            console.log(sumar(8,5));
+
+            const sumar2 = (a,b)=> a + b;
+            console.log(sumar2(10,5));
+
+            //Arrow function con varias lineas de codigo
+
+            const funcionDeVariasLineas = ()=>{
+                console.log("primera linea");
+                console.log("segunda linea");
+                console.log("tercera linea");
+            }
+            funcionDeVariasLineas();
+
+            //ejemplo para iterrar sobre un array
+            const numeros = [1,2,3,4,5,6];
+            /*numeros.forEach(function(el,index){
+                console.log(`${el} esta en la posicion ${index}`)
+            });*/
+
+            numeros.forEach((el,index)=> console.log(`${el} esta en la posicion ${index}`));
+            </script>
+    </body>
+    </html>
+</body>
+</html>

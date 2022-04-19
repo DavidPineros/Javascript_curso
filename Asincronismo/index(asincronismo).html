@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asincronismo en JS</title>
+</head>
+
+<body>
+  <h1>Asincronia en JavaScript</h1>
+
+  <h2>setTimeout y setInterval</h2>
+
+  <a href="Asincronia y el Event Loop.html">Asincronia y el Event Loop</a> <br>
+  <a href="Callbacks.html">Callbacks</a> <br>
+  <a href="promesas.html">Promesas</a> <br>
+  <a href="Async-Await.html">Async-Await</a> <br>
+  <script>
+    //setTimeout recibe una funcion que tiene que ejecutar y un tiempo en milisegundos
+    console.log("inicio")
+    let temporizador = setTimeout(() => {
+      console.log("Ejecutando un setTimeout, esto se ejecutara una sola vez, en este caso luego de 2 segundos de inicio")
+    }, 2000);
+
+    setInterval(() => {
+      console.log("Ejecutando un setInterval, esto se ejecutara indefinidamente cada cierto intervalo de tiempo en este caso cada veinte segundos")
+    }, 20000);
+
+
+    // para tener un reloj se podria asi
+
+    let temporizador2 = setInterval(() => {
+      console.info(new Date().toLocaleTimeString());
+    }, 60000);
+
+    console.log("tambien hay dos metodos para detener tanto el setTimeOut como setInterval que son las siguientes pera se tendria que guardar en una variable el setTimeout como el setInterval");
+
+    /*clearTimeout(temporizador);
+    clearInterval(temporizador2);*/
+  </script>
+</body>
+
+</html>

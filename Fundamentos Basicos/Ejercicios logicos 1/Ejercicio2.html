@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos JS</title>
+</head>
+
+<body>
+  <h1>Fundamentos javascript</h1>
+  <h2>Ejercicio 2 </h2>
+  <p>5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá
+    "odnuM aloH".</p>
+  <p>6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe.
+    miFuncion("hola mundo adios mundo", "mundo") devolverá 2.</p>
+  <p>7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido
+    que en otro), pe. mifuncion("Salas") devolverá true.</p>
+  <p>8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3,
+    xyz4 y xyz5", "xyz") devolverá "1, 2, 3, 4 y 5.</p>
+
+  <script>
+    //aqui se utilizaron 3 metodo el primero split("") que fue para separar el string por caracteres, el segundo es un metodo de Array ya que lo que nos devuelve split es un array y con reverse invertimos las posiciones y depues volvemos a juntarlos en un string con join("")
+    let entradaDeTexto = "Rodolfo"
+
+    const invertirCadena = (texto = "") =>
+      (!texto)
+        ? console.warn("Debes ingresar un valor")
+        : texto.split("").reverse().join("");
+
+    console.log(invertirCadena(entradaDeTexto));
+
+    //ejercicio 2 
+
+    let parrafo = " ay con reverse invertimos las posiciones y depues volvemos a juntarlos en un y y y string con un join()"
+
+    const buscar = (texto = "", palabra = "") => {
+      if (!texto) return console.warn("No ingresaste el texto largo");
+      if (!palabra) return console.warn("No ingresaste la palabra a evaluar");
+      let i = 0;
+      let contador = 0;
+
+      while (i !== -1) {
+        i = texto.indexOf(palabra, i);
+        if (i !== -1) {
+          i++;
+          contador++;
+        }
+      };
+
+      return console.info(`la palabra "${palabra}" se repite ${contador} veces`)
+    }
+
+    buscar(" ay con reverse invertimos las posiciones y depues volvemos a juntarlos en un y y y string con un join()", "y");
+
+    //Ejercicio 3
+
+    let palindromo = "la tele letal"
+
+    const palabraInvertida = (texto = "") =>
+      (!texto)
+        ? console.warn("Debes ingresar una palabra")
+        : texto.split("").reverse().join("");
+
+    let contrario = palabraInvertida(palindromo);
+
+    const igualdad = (texto = "", texto2 = "") =>
+      (texto === texto2)
+        ? console.info(true)
+        : console.info(false);
+
+    igualdad(palindromo, contrario);
+
+    //Ejercicio 3 2 modo de 
+
+    const plindromo = (palabra = "") => {
+      if (!palabra) return console.warn("No ingresaste una palabra o frase");
+
+      palabra = palabra.toLowerCase();
+      let alReves = palabra.split("").reverse().join("");
+
+      return (palabra === alReves)
+        ? console.info(`Si es palindromo, Palabra original ${palabra}, Palabra al reves ${alReves}`)
+        : console.info(`No es palindromo, Palabra original ${palabra}, Palabra al reves ${alReves}`);
+    }
+
+    plindromo();
+    plindromo("salas")
+
+    //ejercicio 4
+
+    const eliminarPatron = (cadena = "", patron = "") =>
+      (!cadena)
+        ? console.warn(`no ingresaste un texto`)
+        : (!patron)
+          ? console.warn(`no ingrsaste un patron de caracteres`)
+          : console.info(cadena.replace(new RegExp(patron, "ig"), ""));
+
+    eliminarPatron();
+    eliminarPatron("xyz1, xyz2, xyz3, xyz4 y xyz5");
+    eliminarPatron("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
+
+  </script>
+
+
+
+
+</body>
+
+</html>
