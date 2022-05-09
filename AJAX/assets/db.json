@@ -49,6 +49,11 @@
       "nombre": "Aioria",
       "constelacion": "Leo",
       "id": 10
+    },
+    {
+      "nombre": "Dohko",
+      "constelacion": "Libra",
+      "id": 11
     }
   ],
   "dioses": [
